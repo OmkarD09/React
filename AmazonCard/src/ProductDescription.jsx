@@ -1,7 +1,7 @@
-function ProductDescription() {
+function ProductDescription({ description }) {
     return (
         <div>
-            <p></p>
+            <p>{description}</p>
         </div>
     );
 }
