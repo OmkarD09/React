@@ -6,6 +6,7 @@ function App() {
 
     return (
         <div className="App">
+            <h1>Amazon Cards</h1>
             <ProductsTab />
         </div>
     );
