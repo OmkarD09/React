@@ -12,7 +12,10 @@ function CountButton() {
 
     const incrementCount = () => {
 
-        setCount(prevCount => prevCount + 1);
+        return prevCount + 1;
+        setCount(prevCount => {
+        });
+
         console.log("Count:", count);
     };
 
