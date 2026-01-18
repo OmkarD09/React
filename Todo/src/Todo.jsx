@@ -28,19 +28,19 @@ function Todo() {
 
     };
 
-    const toUppercaseAll = () => {
+    const isCompletedAll = () => {
         setTasks((prevTasks) => {
             return prevTasks.map((task) => {
-                return { ...task, title: task.title.toUpperCase() };
+                return { ...task, completed: !task.completed };
             });
         });
     };
 
-    const toUpperCaseOne = (id) => {
+    const isCompletedOne = (id) => {
         setTasks((prevTasks) => {
             return prevTasks.map((task) => {
                 if (task.id === id) {
-                    return { ...task, title: task.title.toUpperCase() };
+                    return { ...task, completed: !task.completed };
                 }else {
                     return task;
                 }
@@ -59,14 +59,14 @@ function Todo() {
                 {tasks.map((task) => (
                     <li key={task.id}>
                         <span>{task.title}</span> <button onClick={() => deleteTask(task.id)}>Delete</button>
-                                                <button onClick={() => toUpperCaseOne(task.id)}>UpperCaseOne</button></li>
+                                                <button onClick={() => isCompletedOne(task.id)}>{task.completed ? "Completed" : "Mark Complete"}</button></li>
                 ))}
             </ul>
 
             <br />
             <br />
             <br />
-            <button onClick={(toUppercaseAll)}>to UpperCaseAll</button>
+            <button onClick={isCompletedAll}>Mark All Complete</button>
         </div>
     );
             
