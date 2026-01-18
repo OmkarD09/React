@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { genTicket, sumOfArray } from "./helper";
 import Ticket from "./Ticket";
+import Button from "./Button";
 
 
 
@@ -8,6 +9,10 @@ function Lottery({ n, winningSum }) {
     let [tickets, setTickets] = useState(genTicket(n));
 
     let isWinning = sumOfArray(tickets) === winningSum;
+
+    let action = () => {
+        setTickets(genTicket(n));
+    }
 
     return (
         <div>
@@ -18,7 +23,9 @@ function Lottery({ n, winningSum }) {
 
             <br />
 
-            <button onClick={() => setTickets(genTicket(n))}>Get New Ticket</button>
+            <Button action={action} />
+
+
 
             <div>{isWinning ? "You Win!" : "Try Again"}</div>
         </div>
