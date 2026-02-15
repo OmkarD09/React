@@ -1,10 +1,12 @@
-import './App.css'
-import Form from './Form.jsx'
-import 
+import WeatherApp from "./WeatherApp";
+
 function App() {
 
 
   return (
+    <>
+      <WeatherApp />
+      </>
   )
 }
 
